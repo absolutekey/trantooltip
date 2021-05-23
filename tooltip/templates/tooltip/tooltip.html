@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        {% comment %} {% load static %}
+        <link rel='stylesheet' type="text/css" href="{%  static 'tooltip/style.css'  %}" /> {% endcomment %}
+        <title></title>
+        <style>
+        #main {
+        height: 0px;
+        background-color: #393e46;
+        position: absolute;
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%, -50%);
+        }
+        .game{
+        width: 50%;
+        float: left;
+        }
+        .hai{
+        width: 25%;
+        float: left;
+        }
+        .than {
+        width: 100%;
+        }
+        .color {
+        width: 84%;
+        float: left;
+        }
+
+        .change {
+        color: black;
+        }
+
+        .change:hover {
+        background-color: red;
+        }
+
+        .change:link {
+        color: #000000;
+        text-decoration: none;
+        }
+
+        .change:visited {
+        color: blue;
+        }
+        </style>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    </head>
+    <body>        
+        {% comment %} {% for i  %} 
+            <a class="change" data-toggle="tooltip" data-placement="bottom" data-original-title="" id="{{i}}" ></a>
+        {% endfor %} {% endcomment %}
+        <div class="than">
+        <div class = "hai" >
+        </div>
+            <div class="game">
+                <div id="main">
+                    {% autoescape off %}
+                        {% for i in full %}
+                            {{i}}
+                        {% endfor %}
+                    {% endautoescape %}
+                </div>
+            </div>
+            <div class = "hai" ></div>
+            <div style="clear: both"></div>
+        </div>
+        
+        
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        {% comment %} <p id= 'p1'></p> {% endcomment %}
+        <script>
+        $(document).ready(function() {
+            $('[data-toggle="tooltip"]').tooltip();
+        });
+        {% comment %} var i= {{l}};
+        var v,t;
+        var vv = [];
+        var tt = [];
+        console.log(i)
+        {%for i in value %}
+        document.getElementById("p1").innerHTML = typeof {{i}}
+            vv.push({{i}});
+        {% endfor %}
+        console.log(vv) {% endcomment %}
+        {% comment %} {%for i in tooltip %}
+            t= {{i}};
+            tt.push(t)
+        {% endfor %}
+        console.log(tt) {% endcomment %}
+        {% comment %} $(document).ready(function() {
+            for (var q = 0;q<=i: q++){
+                {% for j in tooltip %} 
+                    $(i).attr();
+                {% endfor %}
+            } 
+            
+        }); {% endcomment %}
+        </script>
+    </body>
+</html>

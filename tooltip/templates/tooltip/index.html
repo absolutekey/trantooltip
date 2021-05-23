@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    {% comment %} {% load static %}
+    <link rel='stylesheet' type="text/css" href="{%  static 'tooltip/style.css'  %}" /> {% endcomment %}
+    <style>
+        #main {
+        height: 0px;
+        background-color: #393e46;
+        position: absolute;
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%, -50%);
+        }
+        .game{
+        width: 50%;
+        float: left;
+        }
+        .hai{
+        width: 25%;
+        float: left;
+        }
+        .than {
+        width: 100%;
+        }
+        .color {
+        width: 84%;
+        float: left;
+        }
+
+        .change {
+        color: black;
+        }
+
+        .change:hover {
+        background-color: red;
+        }
+
+        .change:link {
+        color: #000000;
+        text-decoration: none;
+        }
+
+        .change:visited {
+        color: blue;
+        }   
+        
+    </style>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+    
+    <div class="than">
+    <div class = "hai" >
+    </div>
+        <div class="game">
+            <div id="main">
+                <form action="{% url 'tooltip' %}" method ="POST">
+                {% csrf_token %}
+                    input: <input type="text" name="input" value="" /> <br />
+                    <input type="submit" name="form_click" value="Gửi Dữ Liệu" /><br />
+                </form>
+            </div>
+        </div>
+        <div class = "hai" ></div>
+        <div style="clear: both"></div>
+    </div>
+    
+    <script>
+        {% comment %} $(document).ready(function() {
+            $('[data-toggle="tooltip"]').tooltip();
+        }); {% endcomment %}
+    </script>
+
+</body>
+
+</html>
